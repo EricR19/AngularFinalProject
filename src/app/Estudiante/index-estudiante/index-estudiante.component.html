@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<h1 class="display-4 d-flex justify-content-center mt-5">Estudiantes</h1>
+<div class="d-flex justify-content-center mt-5">
+  <input
+    class="btn btn-info"
+    type="button"
+    [routerLink]="['/insertar-estudiante']"
+    value="Ingresar Estudiante"
+  />
+</div>
+<div class="d-flex justify-content-center mt-3">
+  <input
+    [routerLink]="['/eliminar-estudiante']"
+    class="btn btn-info"
+    type="button"
+    value="Eliminar Estudiante"
+  />
+</div>
+<div class="d-flex justify-content-center mt-3">
+  <input
+    class="btn btn-info"
+    type="button"
+    [routerLink]="['/mostrar-estudiante']"
+    value="Mostrar Estudiante"
+  />
+</div>

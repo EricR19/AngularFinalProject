@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<h1>Mostrar Estudiantes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{ head }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of elements">
+      <th scope="row">{{ el.id }}</th>
+      <td class="table-light">{{ el.Nombre }}</td>
+      <td>{{ el.Apellido }}</td>
+      <td class="table-light">{{ el.Correo }}</td>
+      <td>{{ el.Nota }}</td>
+    </tr>
+  </tbody>
+</table>
