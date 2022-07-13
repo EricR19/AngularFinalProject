@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
+ _url = 'https://pokeapi.co/api/v2/ability/?limit=20&offset=20'
+  constructor(
+      private http: HttpClient
+  ) {
+    
+   }
 
-  constructor(private http: HttpClient) { }
+   getPeople(){
+    let header = new HttpHeaders().set('Type-content', 'aplication/json')
+
+    return this.http.get(this._url, {headers: header})
+   }
 }
