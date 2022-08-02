@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "sme":"./node_modules/.bin/source-map-explorer"
+    "sme": "./node_modules/.bin/source-map-explorer"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
+    "sweetalert2": "^11.4.24",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
