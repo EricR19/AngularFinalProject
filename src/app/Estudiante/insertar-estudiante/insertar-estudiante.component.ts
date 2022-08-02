@@ -1,7 +1,5 @@
-import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
-
+import { RestService } from './../../Api/rest.service';
 
 
 @Component({
@@ -13,23 +11,23 @@ import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 
 
 export class InsertarEstudianteComponent implements OnInit {
-   
-  nom ='';
-  apellidos = '';
-  email = '';
-  datosEstudiante = new Array();
+  nombre: string=''
+  email: string=''
+  
+   constructor( 
+    private RestService: RestService,
+   ) {
+    
+    }
+    
   ngOnInit(): void {
   }
 
   onSubmit(form: any){
-    console.log('Hola', form);
-    this.datosEstudiante.push(form);
-    console.log(this.datosEstudiante);
-    this.nom ='';
-    this.apellidos = '';
-    this.email = '';
-    
-    alert('Se guardo exitosamente')
+    this.RestService.setEstudiante(this.nombre, this.email).subscribe((data:any) => 
+      
+      console.log(`Se guardo exitosamente ${data}` )
+      ) 
   }
 
 }

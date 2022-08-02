@@ -1,16 +1,15 @@
 <app-navbar></app-navbar>
 <h1 class="d-flex justify-content-center mt-5">Agregar estudiante</h1>
 <form #formEstudiante="ngForm" (ngSubmit)="onSubmit(formEstudiante.value)">
-  <div class="d-flex justify-content-center mt-5">
-    <div class="d-inline-flex p-2 bd-highlight">
-      <div class="input-group">
-        <span class="input-group-text" id="inputGroup-sizing-default"
-          >Nombre</span
+    <div class="d-flex justify-content-center mt-5">
+        <div class="d-inline-flex p-2 bd-highlight">
+            <div class="input-group">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span
         >
         <input
           name="nombre"
           id="nombre"
-          [(ngModel)]="nom"
+          [(ngModel)]="nombre"
           type="text"
           class="form-control"
           aria-label="Sizing example input"
@@ -26,24 +25,6 @@
   <div class="d-flex justify-content-center">
     <div class="d-inline-flex p-2 bd-highlight">
       <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default"
-          >Apellidos</span
-        >
-        <input
-          name="apellidos"
-          type="text"
-          [(ngModel)]="apellidos"
-          class="form-control"
-          aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-default"
-          placeholder="Ingrese los apellidos"
-        />
-      </div>
-    </div>
-  </div>
-  <div class="d-flex justify-content-center">
-    <div class="d-inline-flex p-2 bd-highlight">
-      <div class="input-group mb-3">
         <input
           name="email"
           [(ngModel)]="email"
@@ -54,13 +35,10 @@
           aria-describedby="basic-addon2"
         />
         <span class="input-group-text" id="basic-addon2">@example.com</span>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="d-grid gap-2 col-2 mx-auto mt-3">
-    <button class="btn btn-primary" type="submit">Guardar</button>
-  </div>
+    <div class="d-grid gap-2 col-2 mx-auto mt-3">
+        <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
 </form>
-{{ formEstudiante.value | json }}
-
-{{ name.valid }}

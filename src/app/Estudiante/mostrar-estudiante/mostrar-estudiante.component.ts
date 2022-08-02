@@ -1,7 +1,5 @@
 import { RestService } from './../../Api/rest.service';
-
 import { Component, OnInit } from '@angular/core';
-import { computeStyles } from '@popperjs/core';
 
 
 @Component({
@@ -12,27 +10,27 @@ import { computeStyles } from '@popperjs/core';
 
 
 export class MostrarEstudianteComponent implements OnInit {
+  public arra: Array<any> = [];
   
-  public arra: Array<any> = []
-
-  elements: any = [
-    {id: 1, Nombre: 'Mark', Apellido: 'Otto', Correo: '@mdo', Nota: 60},
-    {id: 2, Nombre: 'Jacob', Apellido: 'Thornton', Correo: '@fat',Nota : 100},
-    {id: 3, Nombre: 'Larry', Apellido: 'the Bird', Correo: '@twitter', Nota: 80},
-  ];
-
-  headElements = ['ID', 'Nombre', 'Apellido', 'Correo', 'Nota'];
+  
+  headElements = ['ID', 'Nombre', 'Correo'];
   
   constructor( 
     private RestService: RestService
    ) {
-      this.RestService.getPeople().subscribe((resp: any)=>
-       this.arra= resp
-        );
-        console.log(this.arra)
+    this.RestService.getPeople().subscribe((data:any) => 
+      
+      this.arra = data
+      ) 
     }
+    
   ngOnInit(): void {
     
+  }
+  deleteStudent(key:any){
+    console.log(key.EstudianteId)
+    this.RestService.deleteStudent(key.EstudianteId).subscribe(data => console.log(data));
+    window.location.reload();
   }
 
 }

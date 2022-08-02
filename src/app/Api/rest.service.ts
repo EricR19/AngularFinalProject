@@ -5,16 +5,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestService {
- _url = 'https://pokeapi.co/api/v2/ability/?limit=20&offset=20'
-  constructor(
-      private http: HttpClient
-  ) {
-    
+  private _url: string = 'http://localhost:60326/api/estudiantes'
+  
+  constructor(private http: HttpClient) {
    }
-
    getPeople(){
-    let header = new HttpHeaders().set('Type-content', 'aplication/json')
-
-    return this.http.get(this._url, {headers: header})
+    return this.http.get(this._url)
+   }
+   setEstudiante(nombre: string, email: string){
+    const body = {
+      Nombre: nombre,
+      Email: email
+    }
+    return this.http.post(this._url, body)
+   }
+   deleteStudent(id:any){
+    return this.http.delete(`http://localhost:60326/api/estudiantes/${id}`)
    }
 }
