@@ -7,8 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class RestService {
   private _url: string = 'http://localhost:60326/api/estudiantes'
   
-  constructor(private http: HttpClient) {
-   }
+  constructor(private http: HttpClient) {}
    getPeople(){
     return this.http.get(this._url)
    }

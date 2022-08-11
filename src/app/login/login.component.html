@@ -1,35 +1,30 @@
 <div class="main">
-  <div class="box-login">
-    <div class="title-login">
-      <h2 class="display-4 d-flex justify-content-center mt-5">
-        Ingreso al sistema
-      </h2>
-    </div>
-    <div class="d-flex justify-content-center mt-5">
-      <label for="">Ingrese el usuario</label>
-      <input
-        name="name"
-        ngModel
-        [(ngModel)]="name"
-        type="text"
-        class="usuario"
-        #names="ngModel"
-      />
-    </div>
-    <div class="d-flex justify-content-center mt-5">
-      <label for="">Ingrese la contrasena</label>
-      <input type="text" class="pass" />
-    </div>
-    <div class="d-flex justify-content-center mt-5">
-      <button class="btn btn-info" [routerLink]="['/index']" value="Ingresar">
+    <div class="box-login">
+        <div class="title-login">
+            <h2 class="display-4 d-flex justify-content-center mt-5">
+                Ingreso al sistema
+            </h2>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <label for="">Ingrese el usuario</label>
+            <input name="name" ngModel [(ngModel)]="nombre" type="text" class="usuario" #names="ngModel" />
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <label for="">Ingrese la contrasena</label>
+            <input type="password" class="pass" [(ngModel)]="contrasena" />
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <button class="btn btn-info" (click)="logearse()" value="Ingresar">
         Ingresar
       </button>
+        </div>
     </div>
-  </div>
 </div>
+<p>
+    <ngb-alert *ngIf="show" [dismissible]="false">{{alerta}}</ngb-alert>
+</p>
 
 <div [hidden]="names.valid || names.pristine" class="alert alert-danger">
-  Name is required
+    Name is required
 </div>
-
 {{ names.value }}
