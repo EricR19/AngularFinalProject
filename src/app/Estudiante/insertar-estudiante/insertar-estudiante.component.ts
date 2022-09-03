@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EMPTY } from 'rxjs';
+import Swal from 'sweetalert2';
 import { RestService } from './../../Api/rest.service';
 
 
@@ -11,8 +13,8 @@ import { RestService } from './../../Api/rest.service';
 
 
 export class InsertarEstudianteComponent implements OnInit {
-  nombre: string=''
-  email: string=''
+  nombre: string | '';
+  email: string|'';
   
    constructor( 
     private RestService: RestService,
@@ -26,8 +28,22 @@ export class InsertarEstudianteComponent implements OnInit {
   onSubmit(form: any){
     this.RestService.setEstudiante(this.nombre, this.email).subscribe((data:any) => 
       
-      console.log(`Se guardo exitosamente ${data}` )
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    
       ) 
+      this.clear();
+  }
+
+  clear(){
+
+    this.email = '';
+    this.nombre = '';
   }
 
 }

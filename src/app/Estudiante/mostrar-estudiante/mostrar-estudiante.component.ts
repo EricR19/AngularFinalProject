@@ -27,6 +27,11 @@ export class MostrarEstudianteComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
+  update(key:any){
+    
+    console.log(`Actualizar datos estudiante${key.EstudianteId} ` )
+  }
   async deleteStudent(key:any){
     Swal.fire({
       title: 'Estás seguro que deseas eliminarlo?',
@@ -71,3 +76,4 @@ export class MostrarEstudianteComponent implements OnInit {
     });
   }
 }
+
