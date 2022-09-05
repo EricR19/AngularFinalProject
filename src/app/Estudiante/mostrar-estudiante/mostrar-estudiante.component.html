@@ -12,7 +12,8 @@
             <th scope="row">{{ key.EstudianteId }}</th>
             <td class="table-light">{{ key.Nombre }}</td>
             <td>{{ key.Email }}</td>
-            <td class="table-light"><button (click)="deleteStudent(key)">Eliminar</button> <button (click)="update(key)">Modificar</button></td>
+            <td class="table-light"><button class="btn btn-light" (click)="deleteStudent(key)">Eliminar</button> <button class="btn btn-light" (click)="update(key)">Modificar</button></td>
+
         </tr>
     </tbody>
 </table>

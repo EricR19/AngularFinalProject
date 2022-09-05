@@ -22,10 +22,11 @@ export class RestService {
     return this.http.delete(`http://localhost:60326/api/estudiantes/${id}`)
    }
   updateStudent(id:any, nombre:string, email:string){
+  
     const body = {
       Nombre: nombre,
       Email: email
     }
-    return this.http.put(`${this._url}/${id}`, body);
+    return this.http.put(`http://localhost:60326/api/estudiantes/${id}`, body);
    }
 }

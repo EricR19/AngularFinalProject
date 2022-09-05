@@ -31,7 +31,7 @@ export class InsertarEstudianteComponent implements OnInit {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Your work has been saved',
+      title: 'Su trabajo ha sido guardado',
       showConfirmButton: false,
       timer: 1500
     })
