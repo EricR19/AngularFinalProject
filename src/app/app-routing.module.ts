@@ -35,10 +35,6 @@ const routes: Routes = [
       loadChildren: () => import('./Estudiante/insertar-estudiante/insertar-estudiante.module').then(m => m.InsertarEstudianteModule)
     },
     {
-      path:'eliminar-estudiante',
-      loadChildren: () => import('./Estudiante/eliminar-estudiante/eliminar-estudiante.module').then(m => m.EliminarEstudianteModule)
-    },
-    {
       path:'agregar-profesor',
       loadChildren: () => import('./Profesor/agregar-profesor/agregar-profesor.module').then(m => m.AgregarProfesorModule)
     },
